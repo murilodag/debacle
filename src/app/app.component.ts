@@ -2,8 +2,18 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { Page1 } from '../pages/page1/page1';
-import { Page2 } from '../pages/page2/page2';
+import { DashboardPage } from '../pages/dashboard/dashboard';
+import { AccountsPage } from '../pages/accounts/accounts';
+import { TransactionsPage } from '../pages/transactions/transactions';
+import { CreditCardPage } from '../pages/credit-card/credit-card';
+import { BudgetsPage } from '../pages/budgets/budgets';
+import { ChartsPage } from '../pages/charts/charts';
+import { MonthBalancePage } from '../pages/month-balance/month-balance';
+import { CalendarPage } from '../pages/calendar/calendar';
+import { TagsPage } from '../pages/tags/tags';
+import { CategoriesPage } from '../pages/categories/categories';
+import { SettingsPage } from '../pages/settings/settings';
+import { HelpPage } from '../pages/help/help';
 
 
 @Component({
@@ -12,7 +22,7 @@ import { Page2 } from '../pages/page2/page2';
 export class MyApp {
 	@ViewChild(Nav) nav: Nav;
 
-	rootPage: any = Page1;
+	rootPage: any = DashboardPage;
 
 	pages: Array<{title: string, component: any}>;
 
@@ -21,8 +31,18 @@ export class MyApp {
 
 		// used for an example of ngFor and navigation
 		this.pages = [
-			{ title: 'Page 1', component: Page1 },
-			{ title: 'Page 2', component: Page2 }
+			{ title: 'Dashboard', component: DashboardPage },
+			{ title: 'Accounts', component: AccountsPage },
+			{ title: 'Transactions', component: TransactionsPage },
+			{ title: 'Credit Card', component: CreditCardPage },
+			{ title: 'Budgets', component: BudgetsPage },
+			{ title: 'Charts', component: ChartsPage },
+			{ title: 'Month Balance', component: MonthBalancePage },
+			{ title: 'Calendar', component: CalendarPage },
+			{ title: 'Tags', component: TagsPage },
+			{ title: 'Categories', component: CategoriesPage },
+			{ title: 'Settings', component: SettingsPage },
+			{ title: 'Help', component: HelpPage },
 		];
 
 	}

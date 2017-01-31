@@ -1,8 +1,19 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
-import { Page1 } from '../pages/page1/page1';
-import { Page2 } from '../pages/page2/page2';
+
+import { DashboardPage } from '../pages/dashboard/dashboard';
+import { AccountsPage } from '../pages/accounts/accounts';
+import { TransactionsPage } from '../pages/transactions/transactions';
+import { CreditCardPage } from '../pages/credit-card/credit-card';
+import { BudgetsPage } from '../pages/budgets/budgets';
+import { ChartsPage } from '../pages/charts/charts';
+import { MonthBalancePage } from '../pages/month-balance/month-balance';
+import { CalendarPage } from '../pages/calendar/calendar';
+import { TagsPage } from '../pages/tags/tags';
+import { CategoriesPage } from '../pages/categories/categories';
+import { SettingsPage } from '../pages/settings/settings';
+import { HelpPage } from '../pages/help/help';
 
 import { AngularFireModule } from 'angularfire2';
 
@@ -17,8 +28,18 @@ export const firebaseConfig = {
 @NgModule({
 	declarations: [
 		MyApp,
-		Page1,
-		Page2
+		DashboardPage,
+		AccountsPage,
+		TransactionsPage,
+		CreditCardPage,
+		BudgetsPage,
+		ChartsPage,
+		MonthBalancePage,
+		CalendarPage,
+		TagsPage,
+		CategoriesPage,
+		SettingsPage,
+		HelpPage,
 	],
 	imports: [
 		AngularFireModule.initializeApp(firebaseConfig),
@@ -27,8 +48,18 @@ export const firebaseConfig = {
 	bootstrap: [IonicApp],
 	entryComponents: [
 		MyApp,
-		Page1,
-		Page2
+		DashboardPage,
+		AccountsPage,
+		TransactionsPage,
+		CreditCardPage,
+		BudgetsPage,
+		ChartsPage,
+		MonthBalancePage,
+		CalendarPage,
+		TagsPage,
+		CategoriesPage,
+		SettingsPage,
+		HelpPage,
 	],
 	providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
