@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 
+import { LoggingAspect } from '../../services/log-service';
 import { NavController, NavParams } from 'ionic-angular';
 
+@LoggingAspect(2)
 @Component({
 	selector: 'accounts-page',
 	templateUrl: 'accounts.html'
