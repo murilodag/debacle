@@ -2,8 +2,10 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
+import { LogAspect } from '../services/log-aspect';
+
 import { DashboardPage } from '../pages/dashboard/dashboard';
-import { AccountsPage } from '../pages/accounts/accounts';
+import { AccountListPage } from '../pages/account/account-list';
 import { TransactionsPage } from '../pages/transactions/transactions';
 import { CreditCardPage } from '../pages/credit-card/credit-card';
 import { BudgetsPage } from '../pages/budgets/budgets';
@@ -26,13 +28,13 @@ export class MyApp {
 
 	pages: Array<{title: string, component: any}>;
 
-	constructor(public platform: Platform) {
+	constructor(public platform: Platform, private logAspect: LogAspect) {
 		this.initializeApp();
 
 		// used for an example of ngFor and navigation
 		this.pages = [
 			{ title: 'Dashboard', component: DashboardPage },
-			{ title: 'Accounts', component: AccountsPage },
+			{ title: 'Accounts', component: AccountListPage },
 			{ title: 'Transactions', component: TransactionsPage },
 			{ title: 'Credit Card', component: CreditCardPage },
 			{ title: 'Budgets', component: BudgetsPage },

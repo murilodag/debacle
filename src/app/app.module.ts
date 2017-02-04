@@ -2,8 +2,11 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { LogAspect } from '../services/log-aspect';
+import { DatabaseService } from '../services/database-service';
+
 import { DashboardPage } from '../pages/dashboard/dashboard';
-import { AccountsPage } from '../pages/accounts/accounts';
+import { AccountListPage } from '../pages/account/account-list';
 import { TransactionsPage } from '../pages/transactions/transactions';
 import { CreditCardPage } from '../pages/credit-card/credit-card';
 import { BudgetsPage } from '../pages/budgets/budgets';
@@ -29,7 +32,7 @@ export const firebaseConfig = {
 	declarations: [
 		MyApp,
 		DashboardPage,
-		AccountsPage,
+		AccountListPage,
 		TransactionsPage,
 		CreditCardPage,
 		BudgetsPage,
@@ -49,7 +52,7 @@ export const firebaseConfig = {
 	entryComponents: [
 		MyApp,
 		DashboardPage,
-		AccountsPage,
+		AccountListPage,
 		TransactionsPage,
 		CreditCardPage,
 		BudgetsPage,
@@ -61,6 +64,10 @@ export const firebaseConfig = {
 		SettingsPage,
 		HelpPage,
 	],
-	providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+	providers: [
+		LogAspect,
+		DatabaseService,
+		{provide: ErrorHandler, useClass: IonicErrorHandler},
+	]
 })
 export class AppModule {}
