@@ -2,11 +2,18 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { LogAspect } from '../services/log-aspect';
-import { DatabaseService } from '../services/database-service';
+import {
+	LogAspect,
+	DatabaseService,
+} from '../services';
 
 import { DashboardPage } from '../pages/dashboard/dashboard';
-import { AccountListPage } from '../pages/account/account-list';
+import {
+	AccountCreatePage,
+	AccountDetailPage,
+	AccountEditPage,
+	AccountListPage,
+} from '../pages';
 import { TransactionsPage } from '../pages/transactions/transactions';
 import { CreditCardPage } from '../pages/credit-card/credit-card';
 import { BudgetsPage } from '../pages/budgets/budgets';
@@ -32,6 +39,9 @@ export const firebaseConfig = {
 	declarations: [
 		MyApp,
 		DashboardPage,
+		AccountCreatePage,
+		AccountDetailPage,
+		AccountEditPage,
 		AccountListPage,
 		TransactionsPage,
 		CreditCardPage,
@@ -52,6 +62,9 @@ export const firebaseConfig = {
 	entryComponents: [
 		MyApp,
 		DashboardPage,
+		AccountCreatePage,
+		AccountDetailPage,
+		AccountEditPage,
 		AccountListPage,
 		TransactionsPage,
 		CreditCardPage,

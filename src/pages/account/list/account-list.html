@@ -1,0 +1,53 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Accounts</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-fab bottom right>
+		<button
+				ion-fab
+				(click)="createNewAccount()">
+			<ion-icon name="add">
+			</ion-icon>
+		</button>
+	</ion-fab>
+
+	<ion-list>
+		<button
+				ion-item
+				*ngFor="let account of accounts"
+				(click)="accountSelected(account)">
+
+			<ion-icon item-left name="md-paper"></ion-icon>
+			<h2 ion-label>
+				<strong>
+					{{account.name}}
+				</strong>
+			</h2>
+			<ion-icon item-right name="switch"></ion-icon>
+			<h3>
+				<span item-left>
+					Current Balance
+				</span>
+				<span item-right [attr.positive-balance]="account.initialValue > 0">
+					{{account.initialValue}}
+				</span>
+			</h3>
+
+		</button>
+
+		<ion-item
+				*ngIf="accounts && !accounts.length">
+			There is no account registered. Add a new account!
+		</ion-item>
+	</ion-list>
+
+	<div *ngIf="!accounts" text-center>
+		<ion-spinner name="bubbles"></ion-spinner>
+	</div>
+</ion-content>

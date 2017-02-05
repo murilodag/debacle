@@ -1,0 +1,8 @@
+account-list-page {
+	[positive-balance=true] {
+		color: green;
+	};
+	[positive-balance=false] {
+		color: red;
+	};
+}

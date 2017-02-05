@@ -2,10 +2,14 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
 
-import { LogAspect } from '../services/log-aspect';
+import {
+	LogAspect,
+} from '../services';
 
 import { DashboardPage } from '../pages/dashboard/dashboard';
-import { AccountListPage } from '../pages/account/account-list';
+import {
+	AccountListPage,
+} from '../pages';
 import { TransactionsPage } from '../pages/transactions/transactions';
 import { CreditCardPage } from '../pages/credit-card/credit-card';
 import { BudgetsPage } from '../pages/budgets/budgets';
@@ -24,7 +28,7 @@ import { HelpPage } from '../pages/help/help';
 export class MyApp {
 	@ViewChild(Nav) nav: Nav;
 
-	rootPage: any = DashboardPage;
+	rootPage: any = AccountListPage;
 
 	pages: Array<{title: string, component: any}>;
 

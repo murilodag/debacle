@@ -1,0 +1,41 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title *ngIf="!account">Create a new account</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+	<ion-item>
+		<ion-label floating>
+			Name
+		</ion-label>
+		<ion-input
+				type="text"
+				[(ngModel)]="account.name">
+		</ion-input>
+	</ion-item>
+	<ion-item>
+		<ion-label floating>
+			Value
+		</ion-label>
+		<ion-input
+				type="number"
+				[(ngModel)]="account.initialValue">
+		</ion-input>
+	</ion-item>
+
+	<div padding>
+		<button
+				(click)="saveNewAccount()"
+				icon-left
+				ion-button
+				block
+				outline>
+			<ion-icon name="md-checkmark"></ion-icon>
+			Save
+		</button>
+	</div>
+</ion-content>
